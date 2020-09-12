@@ -67,4 +67,9 @@ def cheapest_shipping(weight):
 
 
 
-print(cheapest_shipping(8))
+price_ground = ground_shipping(8.4)
+price_drone = drone_shipping(1.5)
+package_1 = cheapest_shipping(4.8)
+package_2 = cheapest_shipping(41.5)
+
+print(price_ground, price_drone, package_1, package_2)
