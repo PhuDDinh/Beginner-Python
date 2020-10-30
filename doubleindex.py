@@ -1,10 +1,10 @@
 #Create a function named double_index that has two parameters: a list named lst and a single number named index.
 
-The function should return a new list where all elements are the same as in lst except for the element at index. The element at index should be double the value of the element at index of the original lst.
+#The function should return a new list where all elements are the same as in lst except for the element at index. The element at index should be double the value of the element at index of the original lst.
 
-If index is not a valid index, the function should return the original list.
+#If index is not a valid index, the function should return the original list.
 
-ef double_index(lst, index):
+def double_index(lst, index):
   # Checks to see if index is too big
   if index >= len(lst):
     return lst
