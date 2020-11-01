@@ -1,4 +1,4 @@
-#This is a Tic Tac Toe game against a simple artificial intelligence, the AI will responsd to the player's moves. 
+#This is a Tic Tac Toe game against a simple artificial intelligence, the AI will respond to the player's moves. 
 
 import random
 
