@@ -45,7 +45,7 @@ def makeMove(board, letter, move):
     board[move] = letter
 
 def isWinner(board, letter):
-    # Given a baord and a player's letter, this function returns True if that player has won.
+    # Given a board and a player's letter, this function returns True if that player has won.
     return ((board[7] == letter and board[8] == letter and board[9] == letter) or # this is across the top
     (board[4] == letter and board[5] == letter and board[6] == letter) or # this is across the middle
     (board[1] == letter and board[2] == letter and board[3] == letter) or # this is across the bottom
@@ -79,7 +79,7 @@ def chooseRandomMoveFromList(board, movesList):
     # And return None if there is no valid move.
     possibleMoves = []
     for i in movesList:
-        if isSpaceFree(board, 1):
+        if isSpaceFree(board, i):
             possibleMoves.append(i)
     
     if len(possibleMoves) != 0:
@@ -109,6 +109,10 @@ def getComputerMove(board, computerLetter):
             makeMove(copy, playerLetter, i)
             if isWinner(copy, playerLetter):
                 return i
+    # Checking the Corner, Center, and Side Spaces(in that order)
+    move = chooseRandomMoveFromList(board, [1, 3, 7, 9])
+    if move != None:
+        return move
     # Try to take the center, if it is free.
     if isSpaceFree(board, 5):
         return 5
@@ -157,7 +161,7 @@ while True:
             if isWinner(theBoard, computerLetter):
                 drawBoard(theBoard)
                 print("The computer has beaten you! You lose.")
-                gameisPlaying = False
+                gameIsPlaying = False
             else:
                 if isBoardFull(theBoard):
                     drawBoard(theBoard)
